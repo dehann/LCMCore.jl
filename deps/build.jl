@@ -53,6 +53,8 @@ lcm_cmake_arguments = String[]
 
 end
 
+push!(lcm_cmake_arguments, "-DLCM_ENABLE_JAVA=ON")
+
 provides(Yum,
     Dict("glib" => glib))
 
