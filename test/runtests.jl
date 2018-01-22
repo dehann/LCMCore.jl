@@ -1,5 +1,7 @@
 using Base.Test
 using LCMCore
+using StaticArrays
+using BufferedStreams
 using Base.Dates: Second, Millisecond
 import LCMCore: encode, decode
 
@@ -196,4 +198,11 @@ end
     handle(lcm2, Millisecond(100))
     @test !did_callback1
     @test did_callback2
+end
+
+include("test_lcmtype.jl")
+
+@testset "reading LCM log directly" begin
+  include("testreadlog.jl")
+  main()
 end
