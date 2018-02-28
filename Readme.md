@@ -121,7 +121,7 @@ LCM log files can also be read directly, without the UDP multicasting events.
 Events are read from file one at a time and use a similar API as the UDP traffic interface.
 ```julia
 function callback(channel, msgdata)
-  msg = covert(MsgType, msgdata) # decode
+  msg = decode(msgdata, MsgType)
   # ...
   nothing
 end
@@ -134,3 +134,7 @@ while handle(lcm); end
 ```
 
 See the `test` folder for a more detailed example.
+
+# Experimental `*.lcm` to Julia `ccall` Code Generation
+
+Work in progress: See [test_lcmgenjl](/test/test_lcmgenjl) for an example use case.
