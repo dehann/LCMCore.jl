@@ -296,6 +296,7 @@ function genLcmtypeSpecificCmake(package; destination=nothing)
   println(fid, ")")
   println(fid, "target_include_directories($(package) PUBLIC $(headerdir))")
   println(fid, "")
+  println(fid, "target_link_libraries($(package) lcm)")
   # println(fid, "set_property(TARGET $(package) PROPERTY POSITION_INDEPENDENT_CODE ON)")
   # println(fid, "add_definitions(-shared)")
 
